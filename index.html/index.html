@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087f5b">
+  <title>JSS3 Maths Made Easy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">Σ</div>
+      <div><strong>Maths</strong><span>Made Easy</span></div>
+    </div>
+    <nav class="nav-list" aria-label="Main navigation">
+      <button class="nav-item active" data-page="dashboard"><span>⌂</span> Dashboard</button>
+      <button class="nav-item" data-page="syllabus"><span>▦</span> Syllabus</button>
+      <button class="nav-item" data-page="practice"><span>✓</span> Practice</button>
+      <button class="nav-item" data-page="past"><span>◫</span> Past Questions</button>
+      <button class="nav-item" data-page="quiz"><span>◉</span> Quick Quiz</button>
+    </nav>
+  </aside>
+
+  <main class="main-shell">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="top-actions">
+        <div class="progress-pill"><span id="progressText">0% complete</span><div class="mini-progress"><i id="progressBar"></i></div></div>
+        <button class="profile" id="profileBtn" aria-label="Profile">JA</button>
+      </div>
+    </header>
+
+    <section id="dashboard" class="page active">
+      <div class="welcome-row">
+        <div>
+          <p class="eyebrow">JSS3 MATHEMATICS</p>
+          <h1>Welcome back, Scholar! <span>👋</span></h1>
+          <p>Let’s turn tricky questions into simple steps.</p>
+        </div>
+        <div class="date-card"><span id="todayDate"></span></div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-copy">
+          <span class="hero-tag">CONTINUE LEARNING</span>
+          <h2>Number &amp; Numeration</h2>
+          <p>Learn place value, fractions, percentages and large numbers.</p>
+          <button class="primary-btn" data-go="syllabus">Continue lesson <span>→</span></button>
+        </div>
+        <div class="hero-graphic" aria-hidden="true">
+          <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+          <div class="formula formula-a">½</div><div class="formula formula-b">24</div><div class="formula formula-c">×</div>
+          <div class="book"><i></i><b>Math</b></div>
+        </div>
+      </div>
+
+      <div class="section-heading"><div><p class="eyebrow">EXPLORE</p><h2>Study areas</h2></div></div>
+      <div class="study-grid" id="studyGrid"></div>
+
+      <div class="dashboard-grid">
+        <section class="panel"><div class="panel-head"><h3>Weekly activity</h3><span>5 days</span></div><div class="chart" id="activityChart"></div></section>
+        <section class="panel"><div class="panel-head"><h3>Quick practice</h3><button class="text-btn" data-go="practice">View all</button></div><div id="quickPractice"></div></section>
+      </div>
+    </section>
+
+    <section id="syllabus" class="page">
+      <div class="page-heading"><div><p class="eyebrow">COURSE CONTENT</p><h1>JSS3 Syllabus</h1></div><div class="search-box"><span>⌕</span><input id="topicSearch" type="search" placeholder="Search topics"></div></div>
+      <div id="syllabusList" class="accordion-list"></div>
+    </section>
+
+    <section id="practice" class="page">
+      <div class="page-heading"><div><p class="eyebrow">WORK IT OUT</p><h1>Practice Questions</h1></div><select id="practiceFilter" aria-label="Filter practice"><option value="all">All topics</option></select></div>
+      <div id="practiceList" class="question-list"></div>
+    </section>
+
+    <section id="past" class="page">
+      <div class="page-heading"><div><p class="eyebrow">EXAM PREPARATION</p><h1>Junior WAEC Past Papers</h1></div></div>
+      <div class="notice"><strong>Study archive:</strong> Questions are syllabus-based practice questions grouped by year. They are not official leaked or reproduced WAEC papers.</div>
+      <div class="year-grid" id="yearGrid"></div>
+      <div id="pastQuestionArea"></div>
+    </section>
+
+    <section id="quiz" class="page">
+      <div class="page-heading"><div><p class="eyebrow">TEST YOURSELF</p><h1>Quick Quiz</h1></div><button class="secondary-btn" id="restartQuiz">Restart</button></div>
+      <div class="quiz-card">
+        <div class="quiz-meta"><span id="quizCount">Question 1 of 5</span><strong id="quizScore">Score: 0</strong></div>
+        <div class="quiz-progress"><i id="quizProgress"></i></div>
+        <h2 id="quizQuestion"></h2>
+        <div id="quizOptions" class="quiz-options"></div>
+        <button class="primary-btn" id="nextQuestion" disabled>Next question →</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
